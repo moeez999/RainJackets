@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="./css/slick.css">
+<link rel="stylesheet" href="./css/slick.ttf">
+<link rel="stylesheet" href="./css/slick.woff">
+<link rel="stylesheet" type="text/css" href="./css/slick-theme.css"/>
+  <link rel="shortcut icon" href="./images/22.png" type="image/x-icon" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <title>Home Page</title>
+</head>
+
+<body>
+
+  <!-- Navigation bar -->
+  <nav class="nav-bar">
+    <div class="logo">
+      <a href="./index.html"><img src="./images/image 4.png" alt="" /></a>
+    </div>
+    <div class="input show">
+      <img class="search-icon" src="./images/Ellipse.png" alt="" />
+      <input type="text" name="" class="input-bar" placeholder="Search for jackets" />
+    </div>
+    <div class="list">
+      <div class="hamburger">☰</div>
+      <ul class="listed hidden-content">
+        <a class="nav-items ani-one" href="./jackets.html">Products</a>
+        <a class="nav-items ani-two" href="./aboutus.html">About us</a>
+        <a class="nav-items ani-three" href="./contactus.html">Contact us</a>
+      </ul>
+    </div>
+    <div class="input">
+      <img class="search-icon" src="./images/Ellipse.png" alt="" />
+      <input type="text" name="" class="input-bar" placeholder="Search for jackets" />
+    </div>
+    <div class="icons">
+      <img src="./images/Vector.png" alt="" />
+      <a  href="./checkout.html"><img src="./images/Cart.png" alt="" /></a>
+      <img src="./images/Ellipse 2.png" alt="" />
+    </div>
+  </nav>
+
+
+  <!-- Hero-Section -->
+  <section class="hero-section">
+    <div class="fixed">
+      <div class="FIT">
+        <a href="https://www.facebook.com/" class="fit-items">FACEBOOK</a>
+        —
+        <a href="https://www.instagram.com/" class="fit-items">INSTAGRAM</a>
+        —
+        <a href="https://twitter.com/login" class="fit-items">TWIITER</a>
+      </div>
+    </div>
+    <div class="row-flex">
+      <div class="jacket-details">
+        <h1 class="jacket-heading">Rain Jackets</h1>
+        <p class="jacket-description">
+          The jackets are mid-range in price and br emphasize durability and
+          <br />
+          being suitable for a range of different weather types ensuring
+          <br />
+          customers are comfortable whatever adventure they go on.
+        </p>
+        <p class="jacket-description">
+          We have developed the jackets in environmental ways to ensure <br />
+          taking care of the environment while making the jackets of the
+          <br />
+          highest quality to a mid range price.
+        </p>
+        <div class="jacket-image-div-one show fade ">
+
+
+        </div>
+
+        <div class="explore">
+          <a href="./jackets.html" class="explore-button">EXPLORE MORE</a>
+        </div>
+        <div class="left-right button-hide">
+          <img class="left" id="prev" src="./images/Line (1).png" alt="" />
+          <img class="right" id="next" src="./images/Line.png" alt="" />
+        </div>
+      </div>
+      <div class="jacket-image-div showed ">
+
+      </div>
+    </div>
+    </div>
+    <div class="down-arrow">
+      <img class="arrow-img-two" src="./images/arrow.png" alt="" />
+      <span class="learn-more">Learn more</span>
+    </div>
+  </section>
+
+
+
+
+  <script src="./js/data.js"></script>
+  <script src="./js/index.js"></script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script type="text/javascript" src="./js/slick.min.js"></script>
+  <script type="text/javascript">
+$(".fade").slick({
+  // rtl: true
+  // draggable:false,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 500,
+  variableWidth: true,
+  dots: true,
+  infinite: true,
+  speed: 300,
+  slidesToShow: 1,
+  centerMode: true,
+});
+  </script>
+  
+</body>
+
+</html>
