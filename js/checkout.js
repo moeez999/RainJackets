@@ -115,62 +115,59 @@ function addItem(e, productprice) {
 }
 
 function subtractItem(e, productprice) {
-  if (input == 0) {
+  let x = e.target;
+  let product = getProductById(e);
+  let rate = x.parentElement
+    .closest(".product-details")
+    .querySelector(".price");
+  let input = x.parentElement
+    .closest(".product-details")
+    .querySelector(".amount");
+  let u = x.parentElement.closest(".product-details");
+
+  let w = u.querySelector(".size").innerHTML;
+
+  if (input.value == 0) {
+    alert("Quantity should be greater than 0");
+    input.value = 0;
   } else {
-    let x = e.target;
-    let product = getProductById(e);
-    let rate = x.parentElement
-      .closest(".product-details")
-      .querySelector(".price");
-    let input = x.parentElement
-      .closest(".product-details")
-      .querySelector(".amount");
-    let u = x.parentElement.closest(".product-details");
-    // console.log(u);
-    let w = u.querySelector(".size").innerHTML;
+    input.value = parseInt(input.value) - 1;
+  }
 
-    if (input.value == 0) {
-      alert("Quantity should be greater than 0");
-      input.value = 0;
-    } else {
-      input.value = parseInt(input.value) - 1;
+  rate.innerHTML = parseInt(productprice) * parseInt(input.value);
+  subPlusTotal();
+
+  let filterItems = storejacketData.filter((itemSave) => {
+    if (itemSave.productId == u.dataset.product && itemSave.size == w) {
+      return (itemSave.quantity = input.value);
     }
+  });
 
-    rate.innerHTML = parseInt(productprice) * parseInt(input.value);
-    subPlusTotal();
+  filterItems = filterItems[0];
+  let productIndex = storejacketData.indexOf(filterItems);
+  storejacketData[productIndex] = filterItems;
 
-    let filterItems = storejacketData.filter((itemSave) => {
-      if (itemSave.productId == u.dataset.product && itemSave.size == w) {
-        return (itemSave.quantity = input.value);
-      }
-    });
+  localStorage.setItem("cartItems", JSON.stringify(storejacketData));
+  // console.log(storejacketData);
+}
 
-    filterItems = filterItems[0];
-    let productIndex = storejacketData.indexOf(filterItems);
-    storejacketData[productIndex] = filterItems;
+function subPlusTotal() {
+  let sum = 0;
+  let priceOne = document.querySelectorAll(".pricing");
+  let shippingFee = document.querySelector(".shipping-price").innerHTML;
+  shippingFee = parseInt(shippingFee);
+  // console.log(priceOne);
 
-    localStorage.setItem("cartItems", JSON.stringify(storejacketData));
-    // console.log(storejacketData);
-  }
+  priceOne.forEach((element) => {
+    let subtotal = element.innerHTML;
+    // console.log(element);
+    add = subtotal.replace("$", "");
+    sum = sum + parseInt(add);
+  });
+  sum = sum + shippingFee;
 
-  function subPlusTotal() {
-    let sum = 0;
-    let priceOne = document.querySelectorAll(".pricing");
-    let shippingFee = document.querySelector(".shipping-price").innerHTML;
-    shippingFee = parseInt(shippingFee);
-    // console.log(priceOne);
-
-    priceOne.forEach((element) => {
-      let subtotal = element.innerHTML;
-      // console.log(element);
-      add = subtotal.replace("$", "");
-      sum = sum + parseInt(add);
-    });
-    sum = sum + shippingFee;
-
-    let total = document.querySelector(".total");
-    total.innerHTML = sum;
-  }
+  let total = document.querySelector(".total");
+  total.innerHTML = sum;
 }
 
 // let priceInput = parseInt(productprice) * parseInt(input.value);
