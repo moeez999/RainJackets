@@ -23,30 +23,33 @@ function showItems(product, productId, size) {
                 laoreet neque, quis finibus tortor lacinia vel. Nullam quis <br> turpis ex. Etiam hendrerit fermentum
                 eros quis rutrum. Vivamus vehicula euismod sapien <br> quis ultricies.
             </p>
-            <div class="size-item-div">
-                <a class="size-item small" href="" data-size="s">S</a>
-                <a class="size-item medium" href=""data-size="m">M</a>
-                <a class="size-item large" href=""data-size="l">L</a>
-                <a class="size-item x-large" href=""data-size="xl">XL</a>
+            <div class="size-qty">
+              <div class="size-item-div">
+                  <a class="size-item small" href="" data-size="s">S</a>
+                  <a class="size-item medium" href=""data-size="m">M</a>
+                  <a class="size-item large" href=""data-size="l">L</a>
+                  <a class="size-item x-large" href=""data-size="xl">XL</a>
+              </div>
+              <div class="ad-re">
+                <button class="plus" onclick="addItem('${
+                  "input-" + productId / size
+                }')" >+</button>
+                <input class="amount" type="amount" id="${
+                  "input-" + productId / size
+                }" value="1">
+                <button class="minus" onclick="subtractItem('${
+                  "input-" + productId / size
+                }')">-</button>
+                          </div>
+                          
             </div>
-           
-            <div class="ad-re">
-              <button class="plus" onclick="addItem('${
-                "input-" + productId / size
-              }')" >+</button>
-              <input class="amount" type="amount" id="${
-                "input-" + productId / size
-              }" value="1">
-              <button class="minus" onclick="subtractItem('${
-                "input-" + productId / size
-              }')">-</button>
-                        </div>
+            <a class="shopping-button-div shopping-button trigger-error" href=""><img class="cart-img-w"  src="./images/333.png"> Add to shopping bag</a>
              
             </div>
         </div>
-            <div class="shopping-button-div">
-                <a class="shopping-button" href=""><img class="cart-img-w"  src="./images/333.png"> Add to shopping bag</a>
-            </div>
+            
+               
+            
         </div>
     
   `;

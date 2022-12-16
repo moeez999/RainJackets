@@ -6,7 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./images/22.png" type="image/x-icon" />
+    <link rel="stylesheet" href="iziToast.min.css">
     <link rel="stylesheet" href="./css/style.css">
+    
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.min.js"> -->
+    
     <title>Jacket Info</title>
 </head>
 
@@ -48,8 +52,22 @@
         <section class="jacket-info">
             
         </section>
+        <script src="iziToast.min.js" type="text/javascript">
+            $(".trigger-error").on('click', function (event) {
+             event.preventDefault();
+         
+             iziToast.error({
+                 id: 'error',
+                 title: 'Error',
+                 message: 'Illegal operation',
+                 position: 'topRight',
+                 transitionIn: 'fadeInDown'
+             });
+         });
+         </script>
         <script src="./js/data.js"></script>
 <script src="./js/jacketinfo.js"></script>
+
         
 
 

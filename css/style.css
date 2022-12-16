@@ -971,6 +971,13 @@ label {
   font-size: 1.2vw;
 }
 
+.size-qty {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  gap: 3vw;
+}
+
 .size-item-div {
   display: flex;
   gap: 1.5vw;
@@ -981,6 +988,7 @@ label {
   text-decoration: none;
   color: black;
   padding: 5px 8px;
+  border-radius: 3px;
 }
 
 .amount {
@@ -990,24 +998,22 @@ label {
 .minus:hover {
   background-color: black;
   color: white;
-  border: 1px solid white;
 }
 .plus {
   border-radius: 50%;
-  /* height: 2.5vw; */
+
   background-color: transparent;
 }
 
 .minus {
   border-radius: 50%;
-  /* height: 2.5vw; */
+
   background-color: transparent;
 }
 
 .plus:hover {
   background-color: black;
   color: white;
-  border: 1px solid white;
 }
 
 .is-active {
@@ -1017,7 +1023,8 @@ label {
 }
 
 .size-item:hover {
-  border: 1px solid black;
+  background-color: black;
+  color: white;
 }
 
 .shopping-button-div {
@@ -1030,7 +1037,11 @@ label {
   width: 25vw;
   border-radius: 5px;
   position: relative;
-  left: 70px;
+}
+
+.shopping-button-div:hover {
+  color: white;
+  background-color: black;
 }
 
 .shopping-button {
